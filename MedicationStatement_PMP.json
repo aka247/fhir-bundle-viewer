@@ -1,7 +1,7 @@
 {
     "resourceType": "Bundle",
     "type": "searchset",
-    "total": 11,
+    "total": 17,
     "link": [
         {
             "relation": "self",
@@ -2996,6 +2996,718 @@
             },
             "search": {
                 "mode": "include"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "OperationOutcome",
+                "issue": [
+                    {
+                        "severity": "warning",
+                        "code": "processing",
+                        "details": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.657369",
+                                    "code": "4119",
+                                    "display": "This response includes information available to the authorized user at the time of the request. It may not contain the entire record available in the system."
+                                }
+                            ],
+                            "text": "This response includes information available to the authorized user at the time of the request. It may not contain the entire record available in the system."
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "outcome"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/e4.wtGj.qf4tzLP.0pgC.xydnR46LBe5EwlsWHJHVo4A3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/e4.wtGj.qf4tzLP.0pgC.xydnR46LBe5EwlsWHJHVo4A3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "e4.wtGj.qf4tzLP.0pgC.xydnR46LBe5EwlsWHJHVo4A3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5805486"
+                    }
+                ],
+                "status": "stopped",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "community",
+                            "display": "Community"
+                        }
+                    ],
+                    "text": "Community"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/eH5dXYwvUSXxJ22YIxfiU1QHEo5OJtNStqIarYbgpnk6qAySk.wBnJQicPcsWs3.M3",
+                    "display": "paracetamol 120mg"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-09-24",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                    "display": "C Schroder"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 4,
+                                    "unit": "tablet",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "{tbl}"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 480,
+                                    "unit": "mg/dag",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg/d"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "text": "1x per dag (12u) 480 mg kauwen.",
+                        "patientInstruction": "1x per dag (12u) 480 mg kauwen.",
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-01-29",
+                                    "end": "2021-01-29"
+                                },
+                                "timeOfDay": [
+                                    "12:00:00"
+                                ]
+                            },
+                            "code": {
+                                "text": "1x per dag (12u)"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "8",
+                                    "display": "Oraal"
+                                }
+                            ],
+                            "text": "Oraal"
+                        },
+                        "doseQuantity": {
+                            "value": 480,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": 1,
+                        "unit": "stuk"
+                    },
+                    "expectedSupplyDuration": {
+                        "value": 1,
+                        "unit": "Day",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    }
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/e5DE05RKFtFrO83ElUxJrww4k5UDIMDFVli7QPvZIICw3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/e5DE05RKFtFrO83ElUxJrww4k5UDIMDFVli7QPvZIICw3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "e5DE05RKFtFrO83ElUxJrww4k5UDIMDFVli7QPvZIICw3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5805492"
+                    }
+                ],
+                "status": "active",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "inpatient",
+                            "display": "Inpatient"
+                        }
+                    ],
+                    "text": "Inpatient"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/eTct4uA-Q80V-Tu6RDTNLyx3oJNjHWzc2mF.1TkZjQpewvAxI4LgT2R1p9.E-tllB3",
+                    "display": "buprenorfine injectie 0,5 mg"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-09-28T13:24:36Z",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                    "display": "C Schroder"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 1.65,
+                                    "unit": "ml",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mL"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 0.5,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-09-28T13:30:00Z"
+                                },
+                                "frequency": 1,
+                                "period": 8,
+                                "periodUnit": "h"
+                            },
+                            "code": {
+                                "text": "elke 8 uur"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "3",
+                                    "display": "Intramusculair"
+                                }
+                            ],
+                            "text": "Intramusculair"
+                        },
+                        "doseQuantity": {
+                            "value": 0.5,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/e7dqLcHIEXOklMxldw9mOP14N9qXeSNvIzEy5MM8QY7w3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/e7dqLcHIEXOklMxldw9mOP14N9qXeSNvIzEy5MM8QY7w3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "e7dqLcHIEXOklMxldw9mOP14N9qXeSNvIzEy5MM8QY7w3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5805493"
+                    }
+                ],
+                "status": "active",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "inpatient",
+                            "display": "Inpatient"
+                        }
+                    ],
+                    "text": "Inpatient"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/e57TflxapfUI1nngiKWpbLl-IEDbnNShPZPoKJ1E6KY01H4lgCQGNbsrcr-Yr7A97nlhaf1f6l0q9LWjM-HMhcQ3",
+                    "display": "eculizumab 600 mg in natriumchloride 0,9% 120 ml (5 mg/ml) kortlopend infuus INDIVIDUELE BEREIDING"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-09-28T13:24:36Z",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                    "display": "C Schroder"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 120,
+                                    "unit": "ml",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mL"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 600,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-09-28T13:30:00Z"
+                                },
+                                "duration": 25,
+                                "durationUnit": "min",
+                                "frequency": 1,
+                                "period": 7,
+                                "periodUnit": "d"
+                            },
+                            "code": {
+                                "text": "1x per week"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "4",
+                                    "display": "Intraveneus"
+                                }
+                            ],
+                            "text": "Intraveneus"
+                        },
+                        "doseQuantity": {
+                            "value": 600,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/eALOjV56I5LieDKt6End9p4qIzm1VHtP4osYtVCke98A3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/eALOjV56I5LieDKt6End9p4qIzm1VHtP4osYtVCke98A3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "eALOjV56I5LieDKt6End9p4qIzm1VHtP4osYtVCke98A3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5815130"
+                    }
+                ],
+                "status": "stopped",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "inpatient",
+                            "display": "Inpatient"
+                        }
+                    ],
+                    "text": "Inpatient"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/eh0oVrXzVX-HiLISn7EGR4fLmoIXXuIZfNF7bA.wDQS3Mt.IP3oDzHLMUI3y4gbC03",
+                    "display": "methaDON 5mg/ml drank 5 mg"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-09-28T13:24:36Z",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                    "display": "C Schroder"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 1,
+                                    "unit": "ml",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mL"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 5,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-09-28T13:30:00Z",
+                                    "end": "2021-09-29T13:20:16Z"
+                                },
+                                "frequency": 1,
+                                "period": 1,
+                                "periodUnit": "d"
+                            },
+                            "code": {
+                                "text": "1x per dag"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "8",
+                                    "display": "Oraal"
+                                }
+                            ],
+                            "text": "Oraal"
+                        },
+                        "doseQuantity": {
+                            "value": 5,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/eY.vtqrLxi8w7N732XG-bi1UZqI90ZRSG3fR0Ny6s6GM3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/eY.vtqrLxi8w7N732XG-bi1UZqI90ZRSG3fR0Ny6s6GM3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "eY.vtqrLxi8w7N732XG-bi1UZqI90ZRSG3fR0Ny6s6GM3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5815131"
+                    }
+                ],
+                "status": "completed",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "community",
+                            "display": "Community"
+                        }
+                    ],
+                    "text": "Community"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/eH5dXYwvUSXxJ22YIxfiU1b56Ot1jRcoIdGnb6iB74BXERe.heS08Ma9cv8z84EDZ3",
+                    "display": "paracetamol 120mg"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-09-29",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                    "display": "C Schroder"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 4,
+                                    "unit": "tablet",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "{tbl}"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 480,
+                                    "unit": "mg/dag",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg/d"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "text": "1x per dag (12u) 480 mg kauwen.",
+                        "patientInstruction": "1x per dag (12u) 480 mg kauwen.",
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-01-29"
+                                },
+                                "timeOfDay": [
+                                    "12:00:00"
+                                ]
+                            },
+                            "code": {
+                                "text": "1x per dag (12u)"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "8",
+                                    "display": "Oraal"
+                                }
+                            ],
+                            "text": "Oraal"
+                        },
+                        "doseQuantity": {
+                            "value": 480,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "validityPeriod": {
+                        "start": "2021-01-29"
+                    },
+                    "quantity": {
+                        "value": 1,
+                        "unit": "stuk"
+                    },
+                    "expectedSupplyDuration": {
+                        "value": 1,
+                        "unit": "Day",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    }
+                },
+                "priorPrescription": {
+                    "reference": "/api/FHIR/STU3/MedicationRequest/e4.wtGj.qf4tzLP.0pgC.xydnR46LBe5EwlsWHJHVo4A3",
+                    "display": "paracetamol 120mg"
+                }
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "/api/FHIR/STU3/MedicationRequest/eljMINnNS8ync-tVcYmcIPpD5IMrzgWXUYJQMUmQjkkA3"
+                }
+            ],
+            "fullUrl": "/api/FHIR/STU3/MedicationRequest/eljMINnNS8ync-tVcYmcIPpD5IMrzgWXUYJQMUmQjkkA3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "eljMINnNS8ync-tVcYmcIPpD5IMrzgWXUYJQMUmQjkkA3",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "urn:oid:1.2.840.114350.1.13.485.3.7.2.798268",
+                        "value": "5815137"
+                    }
+                ],
+                "status": "stopped",
+                "intent": "order",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/medication-request-category",
+                            "code": "inpatient",
+                            "display": "Inpatient"
+                        }
+                    ],
+                    "text": "Inpatient"
+                },
+                "medicationReference": {
+                    "reference": "/api/FHIR/STU3/Medication/eHIxcVFziuo3HGNyG36qaod9M6xoBh-l2dHFrlzQebIamwmJ1snyCTLcq5t0Daq.03",
+                    "display": "amoxicilline capsule 500 mg"
+                },
+                "subject": {
+                    "reference": "/api/FHIR/STU3/Patient/eHf0abZdMh9ePCrggd1RroA3",
+                    "display": "Medicatiepilot, P.G.O."
+                },
+                "authoredOn": "2021-10-25T12:34:27Z",
+                "requester": {
+                    "agent": {
+                        "reference": "/api/FHIR/STU3/Practitioner/e9D1EnWpBb3LBTjup8AaiR7RR9P0n7AVlal4dSqY9y3M3",
+                        "display": "C Schroder"
+                    }
+                },
+                "recorder": {
+                    "reference": "/api/FHIR/STU3/Practitioner/eeFQgcsdB7PFIPwmBNonAP4WlfwBbSnvQWTzi3F-8cZk3",
+                    "display": "S Leijendekker"
+                },
+                "dosageInstruction": [
+                    {
+                        "extension": [
+                            {
+                                "valueQuantity": {
+                                    "value": 1,
+                                    "unit": "capsule",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "{capsule}"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                            },
+                            {
+                                "valueQuantity": {
+                                    "value": 500,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                },
+                                "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                            }
+                        ],
+                        "timing": {
+                            "repeat": {
+                                "boundsPeriod": {
+                                    "start": "2021-10-25T12:35:11Z",
+                                    "end": "2021-10-25T12:35:11Z"
+                                },
+                                "frequency": 2,
+                                "period": 1,
+                                "periodUnit": "d"
+                            },
+                            "code": {
+                                "text": "2x per dag"
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:1.2.840.114350.1.13.485.3.7.4.798268.7025",
+                                    "code": "8",
+                                    "display": "Oraal"
+                                }
+                            ],
+                            "text": "Oraal"
+                        },
+                        "doseQuantity": {
+                            "value": 500,
+                            "unit": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mg"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
             }
         },
         {

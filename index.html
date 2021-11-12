@@ -20,7 +20,7 @@
 <body>
 
 <div class="container-fluid">
-  <div id="title"><h2><i>Patient Viewer</i></h2></div>
+  <div id="title"><h2><i>FHIR Bundle Viewer</i></h2></div>
 
   <div id="controls">
     <p>
@@ -142,6 +142,11 @@ function displayBundle(data) {
 function getValue(element) {
     var value = element;
     if (element == undefined) value = "";
+    else if (element["reference"]) {
+        var before = element.reference.substring (0, element.reference.lastIndexOf('/'));
+        var resourceType = before.substring (before.lastIndexOf('/') + 1).toLowerCase();
+        value = '<a data-toggle="tab" href="#' + resourceType + '"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>' + value.display + "</a>";
+    }
     else if (element["display"]) value = '<span class="glyphicon glyphicon-link" aria-hidden="true"></span>' + value.display;
     else if (element["text"]) value = value.text;
     else if (element["value"]) value = value.value;
@@ -157,9 +162,16 @@ function getValue(element) {
         else if (element["code"]) { value = getValue(element.code); }
         else if (element["reference"]) { value = '@' + element.reference; }
         else if (element["itemCodeableConcept"]) { value = getValue(element.itemCodeableConcept); }
-        else if (element["itemReference"]) { value = '<span class="glyphicon glyphicon-link" aria-hidden="true"></span>' + getValue(element.itemReference); }
-        else value = JSON.stringify(element);
+        else if (element["itemReference"]) { value = getValue(element.itemReference); }
+        else {
+            value = "";
+            for (key in element) {
+                var _value = getValue(element[key]);
+                value += _value + " &bull; ";
+            }
+        }
     }
+    // value = JSON.stringify(element);
     return value;
 }
 
