@@ -51,8 +51,8 @@ $(document).ready(function(){
             headers : { 'Authorization' : 'Bearer ' + smart.server.auth.token }
         });        
         $.getJSON(smart.server.serviceUrl + "/Patient/" + smart.patient.id + "/$everything?_count=200", function(data, status){
-            displayBundle(data);
             _data = data;
+            displayBundle(data);
         });
     });
 });
@@ -68,7 +68,6 @@ function newInputFile() {
 }
 
 function displayBundle(data) {
-
     // create title based on Patient
     var entries = data.entry.filter(entry => { return entry.resource.resourceType == "Patient" });
     if (entries.length > 0 && entries[0].resource && entries[0].resource.name) {
@@ -112,6 +111,7 @@ function displayBundle(data) {
             }
         });
         div += "<tr>";
+        // hide some really technical columns
         columns.delete("resourceType");
         columns.delete("id");
         columns.delete("contained");
@@ -120,15 +120,18 @@ function displayBundle(data) {
         columns.delete("text");
         columns.delete("subject");
         columns.delete("context");
+
+        // create header line
         columns.forEach(column => {
             div += "<th>" + column + "</th>";
         });
         div += "</tr>";
 
+        // populate columns
         entries.reverse().forEach(entry => {
             var row = "<tr>";
             columns.forEach(column => {
-                var value = getValue(entry.resource[column]);
+                var value = getValue(entry.resource[column], data);
                 div += "<td>" + value + "</td>";
             });    
             row += "</tr>";
@@ -139,21 +142,29 @@ function displayBundle(data) {
     });    
 }
 
-function getValue(element) {
+function getValue(element, data) {
     var value = element;
     if (element == undefined) value = "";
     else if (element["reference"]) {
         var before = element.reference.substring (0, element.reference.lastIndexOf('/'));
         var resourceType = before.substring (before.lastIndexOf('/') + 1).toLowerCase();
-        value = '<a data-toggle="tab" href="#' + resourceType + '"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>' + value.display + "</a>";
+        var icon = "glyphicon-share-alt";
+        if (data) {
+            // see if the reference is in the Bundle
+            var refedEntries = data.entry.filter(entry => { return entry.fullUrl == element.reference });
+            if (refedEntries.length > 0) {
+                icon = "glyphicon-paperclip";
+            }
+        }
+        value = '<a data-toggle="tab" href="#' + resourceType + '"><span class="glyphicon ' + icon + '" aria-hidden="true"></span>' + value.display + "</a>";
     }
-    else if (element["display"]) value = '<span class="glyphicon glyphicon-link" aria-hidden="true"></span>' + value.display;
+    else if (element["display"]) value = value.display;
     else if (element["text"]) value = value.text;
     else if (element["value"]) value = value.value;
     else if (Array.isArray(element)) {
         value = "";
         element.forEach(entry => {
-            value += getValue(entry) + "<br/>";
+            value += getValue(entry, data) + "<br/>";
         });
     }
     else if (typeof element == "object") {
@@ -191,19 +202,19 @@ function getContextEncounterLocation(data, entry) {
 function formatLocation(_location) {
     var location = "";
     switch (_location) {
-                case "UMCG":
-                    location = "<span class=\"label label-primary\">" + _location + "</span>";
-                    break;
-                case "MARTINI":
-                    location = "<span class=\"label label-success\">" + _location + "</span>";
-                    break;
-                case "HA":
-                    location = "<span class=\"label label-info\">" + _location + "</span>";
-                    break;
-                default:
-                    location = "<span class=\"label\">" + _location + "</span>";
-                    break;
-            }
+        case "UMCG":
+            location = "<span class=\"label label-primary\">" + _location + "</span>";
+            break;
+        case "MARTINI":
+            location = "<span class=\"label label-success\">" + _location + "</span>";
+            break;
+        case "HA":
+            location = "<span class=\"label label-info\">" + _location + "</span>";
+            break;
+        default:
+            location = "<span class=\"label\">" + _location + "</span>";
+            break;
+    }
     return location;
 }
 
